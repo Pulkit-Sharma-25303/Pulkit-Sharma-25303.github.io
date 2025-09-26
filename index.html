@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulkit Sharma | Generative AI Engineer</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #0D1117;
+            --surface: #161B22;
+            --primary: #58A6FF; /* A vibrant blue */
+            --secondary: #1F6FEB;
+            --text-primary: #C9D1D9;
+            --text-secondary: #8B949E;
+            --border: #30363D;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text-primary);
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        .glass-effect {
+            background: rgba(22, 27, 34, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(88, 166, 255, 0.2), 0 0 5px rgba(88, 166, 255, 0.1);
+        }
+        
+        .section-heading {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 3rem;
+        }
+        
+        .section-heading::before {
+            content: '';
+            display: block;
+            width: 3rem;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skill-card {
+            background-color: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ========== HEADER ========== -->
+    <header class="glass-effect fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-white font-mono hover:text-primary transition-colors">PulkitSharma</a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="hover:text-primary transition-colors duration-300">About</a>
+                <a href="#experience" class="hover:text-primary transition-colors duration-300">Experience</a>
+                <a href="#projects" class="hover:text-primary transition-colors duration-300">Projects</a>
+                <a href="#skills" class="hover:text-primary transition-colors duration-300">Skills</a>
+                <a href="#certifications" class="hover:text-primary transition-colors duration-300">Certifications</a>
+                <a href="mailto:pulkit2693@gmail.com" class="bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-lg transition-colors duration-300">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 space-y-4">
+            <a href="#about" class="block hover:text-primary transition-colors">About</a>
+            <a href="#experience" class="block hover:text-primary transition-colors">Experience</a>
+            <a href="#projects" class="block hover:text-primary transition-colors">Projects</a>
+            <a href="#skills" class="block hover:text-primary transition-colors">Skills</a>
+            <a href="#certifications" class="block hover:text-primary transition-colors">Certifications</a>
+            <a href="mailto:pulkit2693@gmail.com" class="block mt-2 bg-primary hover:bg-secondary text-white font-medium py-2 px-4 rounded-lg text-center transition-colors">Contact</a>
+        </div>
+    </header>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section id="home" class="min-h-screen w-full flex items-center pt-32 pb-16">
+        <!-- Hero Content -->
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div>
+                    <span class="font-mono text-primary">Hi, my name is</span>
+                    <h1 class="text-5xl md:text-7xl font-bold text-white mt-2 mb-4">Pulkit Sharma.</h1>
+                    <h2 class="text-3xl md:text-5xl font-bold text-text-secondary mb-6">I build intelligent AI systems.</h2>
+                    <p class="max-w-xl text-lg mb-8">
+                        I'm a Generative AI Engineer specializing in LLMs, backend integration, and automation. I'm passionate about building intelligent applications that transform complex problems into elegant solutions.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="mailto:pulkit2693@gmail.com" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2">
+                            Get In Touch <i data-lucide="send" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#projects" class="bg-surface hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-lg transition-colors duration-300 flex items-center gap-2 border border-border">
+                            View My Work <i data-lucide="arrow-down-right" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                     <div class="flex gap-6 mt-8">
+                        <!-- TODO: Add your social media links -->
+                        <a href="https://github.com/Pulkit-Sharma-25303" class="text-text-secondary hover:text-primary"><i data-lucide="github" class="w-7 h-7"></i></a>
+                        <a href="https://www.linkedin.com/in/pulkit-sharma-810837284/" class="text-text-secondary hover:text-primary"><i data-lucide="linkedin" class="w-7 h-7"></i></a>
+                    </div>
+                </div>
+                 <!-- Image Content -->
+                <div class="hidden md:flex justify-center items-center">
+                    <!-- This is the PNG-style image. You can replace the src with your own image link. -->
+                    <img src="images/Adobe Express - file.png" class="max-w-sm lg:max-w-md w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6">
+
+        <!-- ========== ABOUT SECTION ========== -->
+        <section id="about" class="py-28 fade-in-up">
+            <h2 class="section-heading">About Me</h2>
+            <div class="grid md:grid-cols-5 gap-10 items-start">
+                <div class="md:col-span-2">
+                    <!-- TODO: Replace with a real image of you -->
+                    <div class="relative group">
+                         <div class="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <img src="images/avatar.png" alt="Pulkit Sharma" class="relative rounded-lg w-full h-auto shadow-xl">
+                    </div>
+                </div>
+                <div class="md:col-span-3 text-lg text-text-secondary space-y-4">
+                    <p>
+                        Hello! I'm Pulkit, a passionate engineer with a strong foundation in Computer Science, specializing in Artificial Intelligence and Machine Learning. My journey in tech is driven by a fascination with creating intelligent systems that can learn, adapt, and solve real-world challenges.
+                    </p>
+                    <p>
+                        With expertise in Python, Java, TensorFlow, and various LLM APIs like Gemini and Ollama, I've had the opportunity to build everything from AI-powered developer assistants and computer vision models to sophisticated multi-tenant chatbot platforms.
+                    </p>
+                    <p>
+                        I thrive in environments where I can bridge the gap between cutting-edge research and practical application. I'm always eager to learn new technologies and contribute to projects that push the boundaries of what's possible with AI.
+                    </p>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- ========== EXPERIENCE SECTION ========== -->
+        <section id="experience" class="py-28 fade-in-up">
+            <h2 class="section-heading">Work Experience</h2>
+            <div class="space-y-12">
+                <!-- Experience 1 -->
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="md:col-span-1">
+                        <p class="font-mono text-primary">Aug 2025 - Present</p>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-xl font-bold text-white">Gen AI Intern - Liberin Technologies Pvt. Ltd.</h3>
+                        <p class="text-text-secondary mb-4">Noida</p>
+                        <ul class="list-disc list-inside text-text-secondary space-y-2">
+                            <li>Built n8n-powered chatbots & AI assistants by integrating LLMs (Ollama, Mistral, Gemini).</li>
+                            <li>Integrated Gemini API into conversational systems for improved contextual responses.</li>
+                            <li>Developed backend services with Spring Boot for AI-driven applications.</li>
+                            <li>Designed prompt-engineered solutions for domain-specific AI assistants.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <!-- Experience 2 -->
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="md:col-span-1">
+                        <p class="font-mono text-primary">Jun 2024 - Aug 2024</p>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-xl font-bold text-white">Summer Intern, Computer Vision & Deep Learning - IGDTUW</h3>
+                        <p class="text-text-secondary mb-4">New Delhi</p>
+                        <ul class="list-disc list-inside text-text-secondary space-y-2">
+                            <li>Created YOLOv8 brain tumor detection model with 30% faster inference.</li>
+                            <li>Built a CNN-based facial expression recognition model with 59.2% accuracy.</li>
+                            <li>Contributed to deployment-ready research pipelines.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- TODO: Add more experiences here -->
+                <!-- 
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="md:col-span-1">
+                        <p class="font-mono text-primary">MONTH YEAR - MONTH YEAR</p>
+                    </div>
+                    <div class="md:col-span-3">
+                        <h3 class="text-xl font-bold text-white">YOUR ROLE - COMPANY NAME</h3>
+                        <p class="text-text-secondary mb-4">Location</p>
+                        <ul class="list-disc list-inside text-text-secondary space-y-2">
+                            <li>Responsibility or achievement 1.</li>
+                            <li>Responsibility or achievement 2.</li>
+                        </ul>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <!-- ========== PROJECTS SECTION ========== -->
+        <section id="projects" class="py-28 fade-in-up">
+            <h2 class="section-heading">Featured Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Project: MediQuery -->
+                <div class="glass-effect rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 glow-effect">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="file-medical" class="w-10 h-10 text-primary"></i>
+                             <!-- TODO: Add project links here -->
+                             <div class="flex gap-3">
+                                <a href="https://github.com/Pulkit-Sharma-25303/MediQuery/tree/main/MediQuery" class="text-text-secondary hover:text-primary"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <!-- <a href="#" class="text-text-secondary hover:text-primary"><i data-lucide="external-link" class="w-6 h-6"></i></a> -->
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">MediQuery - AI-Powered EHR System</h3>
+                        <p class="text-text-secondary mb-4 text-sm">Developed a role-based EHR platform with an integrated LLM for natural language queries on patient history and automated PDF report summarization.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+                        <span class="bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded">Python</span>
+                        <span class="bg-green-900/50 text-green-300 px-2 py-1 rounded">Django</span>
+                        <span class="bg-indigo-900/50 text-indigo-300 px-2 py-1 rounded">PostgreSQL</span>
+                        <span class="bg-green-900/50 text-green-300 px-2 py-1 rounded">Ollama</span>
+                    </div>
+                </div>
+
+                <!-- Project 1 -->
+                <div class="glass-effect rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 glow-effect">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="bot" class="w-10 h-10 text-primary"></i>
+                             <!-- TODO: Add project links here -->
+                             <div class="flex gap-3">
+                                <a href="https://github.com/Pulkit-Sharma-25303/Vakta-Multi-Tenant-RAG-ChatBot-Platform" class="text-text-secondary hover:text-primary"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <!-- <a href="#" class="text-text-secondary hover:text-primary"><i data-lucide="external-link" class="w-6 h-6"></i></a> -->
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Vakta-Chatbot: Multi-Tenant RAG Platform</h3>
+                        <p class="text-text-secondary mb-4 text-sm">Engineered a full-stack platform in Java Spring Boot for creating, managing, and deploying custom RAG chatbots with strict data isolation using Qdrant.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+                        <span class="bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Java Spring Boot</span>
+                        <span class="bg-green-900/50 text-green-300 px-2 py-1 rounded">Ollama</span>
+                        <span class="bg-purple-900/50 text-purple-300 px-2 py-1 rounded">Qdrant</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass-effect rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 glow-effect">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="code-xml" class="w-10 h-10 text-primary"></i>
+                             <!-- TODO: Add project links here -->
+                             <div class="flex gap-3">
+                                <a href="https://github.com/Pulkit-Sharma-25303/CodeSage-AI-Powered-Development-Assistant" class="text-text-secondary hover:text-primary"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <!-- <a href="#" class="text-text-secondary hover:text-primary"><i data-lucide="external-link" class="w-6 h-6"></i></a> -->
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">CodeSage AI Development Assistant</h3>
+                        <p class="text-text-secondary mb-4 text-sm">Built a full-stack AI tool for code review, test generation, and refactoring, using a parallel file analysis engine and pgvector for semantic search.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+                        <span class="bg-blue-900/50 text-blue-300 px-2 py-1 rounded">Spring AI</span>
+                        <span class="bg-indigo-900/50 text-indigo-300 px-2 py-1 rounded">PostgreSQL</span>
+                        <span class="bg-red-900/50 text-red-300 px-2 py-1 rounded">pgvector</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="glass-effect rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 glow-effect">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="book-image" class="w-10 h-10 text-primary"></i>
+                             <!-- TODO: Add project links here -->
+                             <div class="flex gap-3">
+                                <a href="https://github.com/Pulkit-Sharma-25303/GenMangaAI" class="text-text-secondary hover:text-primary"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <!-- <a href="#" class="text-text-secondary hover:text-primary"><i data-lucide="external-link" class="w-6 h-6"></i></a> -->
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">GenManga AI Manga Panel Creator</h3>
+                        <p class="text-text-secondary mb-4 text-sm">Developed a Stable Diffusion-based system to generate manga panels from text prompts, featuring a dynamic layout algorithm and speech bubble rendering.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+                        <span class="bg-yellow-900/50 text-yellow-300 px-2 py-1 rounded">Python</span>
+                        <span class="bg-orange-900/50 text-orange-300 px-2 py-1 rounded">Stable Diffusion</span>
+                        <span class="bg-pink-900/50 text-pink-300 px-2 py-1 rounded">PIL</span>
+                    </div>
+                </div>
+
+                <!-- TODO: Add more projects here -->
+                <!--
+                <div class="glass-effect rounded-lg p-6 flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300 glow-effect">
+                    <div>
+                        <div class="flex justify-between items-center mb-4">
+                            <i data-lucide="folder-git-2" class="w-10 h-10 text-primary"></i>
+                             <div class="flex gap-3">
+                                <a href="#" class="text-text-secondary hover:text-primary"><i data-lucide="github" class="w-6 h-6"></i></a>
+                                <a href="#" class="text-text-secondary hover:text-primary"><i data-lucide="external-link" class="w-6 h-6"></i></a>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">New Project Title</h3>
+                        <p class="text-text-secondary mb-4 text-sm">Brief description of your awesome new project.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mt-4 font-mono text-xs">
+                        <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded">Tech 1</span>
+                        <span class="bg-gray-700 text-gray-300 px-2 py-1 rounded">Tech 2</span>
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+
+        <!-- ========== SKILLS SECTION ========== -->
+        <section id="skills" class="py-28 fade-in-up">
+            <h2 class="section-heading">My Tech Stack</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-white">Programming Languages</h3>
+                    <div class="space-y-3">
+                        <div class="skill-card"><i data-lucide="code" class="w-6 h-6 text-primary"></i><span>Python</span></div>
+                        <div class="skill-card"><i data-lucide="code" class="w-6 h-6 text-primary"></i><span>Java</span></div>
+                        <div class="skill-card"><i data-lucide="code" class="w-6 h-6 text-primary"></i><span>C</span></div>
+                        <div class="skill-card"><i data-lucide="database" class="w-6 h-6 text-primary"></i><span>SQL</span></div>
+                    </div>
+                </div>
+                <!-- AI/ML -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-white">AI / ML</h3>
+                    <div class="space-y-3">
+                        <div class="skill-card"><i data-lucide="brain-circuit" class="w-6 h-6 text-primary"></i><span>TensorFlow & Keras</span></div>
+                        <div class="skill-card"><i data-lucide="brain-circuit" class="w-6 h-6 text-primary"></i><span>Scikit-learn</span></div>
+                        <div class="skill-card"><i data-lucide="brain-circuit" class="w-6 h-6 text-primary"></i><span>NumPy & Pandas</span></div>
+                        <div class="skill-card"><i data-lucide="brain-circuit" class="w-6 h-6 text-primary"></i><span>Stable Diffusion</span></div>
+                    </div>
+                </div>
+                 <!-- LLM APIs & Automation -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-white">LLM APIs & Automation</h3>
+                    <div class="space-y-3">
+                        <div class="skill-card"><i data-lucide="bot" class="w-6 h-6 text-primary"></i><span>Gemini API</span></div>
+                        <div class="skill-card"><i data-lucide="bot" class="w-6 h-6 text-primary"></i><span>Mistral API</span></div>
+                        <div class="skill-card"><i data-lucide="bot" class="w-6 h-6 text-primary"></i><span>Ollama</span></div>
+                    </div>
+                </div>
+                <!-- Databases & Visualization -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-white">Databases & Visualization</h3>
+                    <div class="space-y-3">
+                        <div class="skill-card"><i data-lucide="database" class="w-6 h-6 text-primary"></i><span>MySQL & PostgreSQL</span></div>
+                        <div class="skill-card"><i data-lucide="bar-chart-3" class="w-6 h-6 text-primary"></i><span>Power BI & Tableau</span></div>
+                        <div class="skill-card"><i data-lucide="area-chart" class="w-6 h-6 text-primary"></i><span>Matplotlib & Seaborn</span></div>
+                    </div>
+                </div>
+                <!-- Backend & Tools -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-semibold text-white">Backend & Tools</h3>
+                    <div class="space-y-3">
+                        <div class="skill-card"><i data-lucide="server" class="w-6 h-6 text-primary"></i><span>Spring Boot</span></div>
+                        <div class="skill-card"><i data-lucide="server" class="w-6 h-6 text-primary"></i><span>Django</span></div>
+                        <div class="skill-card"><i data-lucide="git-branch" class="w-6 h-6 text-primary"></i><span>Git & GitHub</span></div>
+                        <div class="skill-card"><i data-lucide="terminal" class="w-6 h-6 text-primary"></i><span>Linux</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== CERTIFICATIONS SECTION ========== -->
+        <section id="certifications" class="py-28 fade-in-up">
+            <h2 class="section-heading">Certifications & Learning</h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="#" class="glass-effect rounded-lg p-5 group hover:border-primary transition-colors">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="award" class="w-8 h-8 text-primary mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-white group-hover:text-primary transition-colors">Spring Boot for Java Developers</h3>
+                            <p class="text-sm text-text-secondary">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="glass-effect rounded-lg p-5 group hover:border-primary transition-colors">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="award" class="w-8 h-8 text-primary mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-white group-hover:text-primary transition-colors">Complete Data Science, ML, DL, NLP Bootcamp</h3>
+                            <p class="text-sm text-text-secondary">Udemy</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="glass-effect rounded-lg p-5 group hover:border-primary transition-colors">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="award" class="w-8 h-8 text-primary mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-white group-hover:text-primary transition-colors">Data Science & Analytics</h3>
+                            <p class="text-sm text-text-secondary">HP Foundation</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="glass-effect rounded-lg p-5 group hover:border-primary transition-colors">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="award" class="w-8 h-8 text-primary mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-white group-hover:text-primary transition-colors">Mathematics for Machine Learning</h3>
+                            <p class="text-sm text-text-secondary">Great Learning</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="glass-effect rounded-lg p-5 group hover:border-primary transition-colors">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="award" class="w-8 h-8 text-primary mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-white group-hover:text-primary transition-colors">Python Training</h3>
+                            <p class="text-sm text-text-secondary">IIT Bombay</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="glass-effect rounded-lg p-5 group hover:border-primary transition-colors">
+                    <div class="flex items-start gap-4">
+                        <i data-lucide="award" class="w-8 h-8 text-primary mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-white group-hover:text-primary transition-colors">Java Training</h3>
+                            <p class="text-sm text-text-secondary">LearnWik</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="text-center py-10 border-t border-border mt-20">
+        <p class="text-text-secondary">Designed & Built by Pulkit Sharma</p>
+        <p class="text-xs text-text-secondary/50 mt-2">Inspired by modern web design trends.</p>
+    </footer>
+
+    <script>
+        (() => {
+            lucide.createIcons();
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            const sections = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        })();
+    </script>
+
+</body>
+</html>
+
+
+
+
+
